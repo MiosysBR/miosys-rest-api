@@ -4,7 +4,8 @@ metadata:
   name: miosys-http-route
 spec:
   parentRefs:
-  - name: miosys-prod-web
+  - kind: Gateway
+    name: miosys-prod-web
   rules:
   # StockCounter
   - matches:     
