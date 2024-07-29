@@ -6,7 +6,7 @@ spec:
   parentRefs:
   - name: miosys-prod-web
   hostnames:
-  - "example.com"
+  - "miosys.com.br"
   rules:
   - matches:
     - path:
