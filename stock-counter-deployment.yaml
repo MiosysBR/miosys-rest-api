@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: miosys-rest-api-stock-counter-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: miosys-rest-api-stock-counter-microservice
+  template:
+    metadata:
+      labels:
+        app: miosys-rest-api-stock-counter-microservice
+    spec:
+      containers:
+      - name: miosys-rest-api-stock-counter
+        image: registry.gitlab.com/miosysbr/miosys-rest-api-stock-counter:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        env:
+        - name: SERVER_PORT
+          value: "8080"
+      imagePullSecrets:
+      - name: gitlab-registry-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: miosys-rest-api-stock-counter-service
+spec:
+  selector:
+    app: miosys-rest-api-stock-counter-microservice
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
