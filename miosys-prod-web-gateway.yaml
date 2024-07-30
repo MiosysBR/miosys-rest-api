@@ -8,11 +8,9 @@ spec:
   - name: http
     protocol: http
     port: 80
+    allowedRoutes:
+      namespaces:
+        from: Same
   addresses:
   - type: NamedAddress
     value: miosys-external-ip
-  allowedRoutes:
-    kinds:
-    - kind: HTTPRoute
-    namespaces:
-      from: Same
