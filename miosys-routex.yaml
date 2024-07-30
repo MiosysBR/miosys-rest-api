@@ -9,16 +9,6 @@ spec:
   hostnames:
   - "miosys.com.br"
   rules:
-  - matches:
-    - path:
-        type: PathPrefix
-        value: /api/stockcounter
-    filters:
-    - type: URLRewrite
-      urlRewrite:
-        path:
-          type: ReplacePrefixMatch
-          replacePrefixMatch: /
-    backendRefs:
+  - backendRefs:
     - name: miosys-rest-api-stock-counter-service
       port: 8080
