@@ -1,1 +1,55 @@
-
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: miosys-rest-api-default-deployment
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: miosys-rest-api-default-microservice
+  template:
+    metadata:
+      labels:
+        app: miosys-rest-api-default-microservice
+    spec:
+      containers:
+      - name: miosys-rest-api-default
+        image: registry.gitlab.com/miosysbr/miosys-rest-api-default:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+      - name: gitlab-registry-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: miosys-rest-api-default-service
+  namespace: default
+  annotations:
+    cloud.google.com/neg: '{"exposed_ports": {"8080":{}}}'
+spec:
+  selector:
+    app: miosys-rest-api-default-microservice
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  type: ClusterIP
+---
+apiVersion: networking.gke.io/v1
+kind: HealthCheckPolicy
+metadata:
+  name: miosys-rest-api-default-service-healthcheck
+spec:
+  default:
+    config:
+      type: HTTP
+      httpHealthCheck:
+        port: 8080
+        requestPath: /actuator/health
+  targetRef:
+    group: ""
+    kind: Service
+    name: miosys-rest-api-default-service
