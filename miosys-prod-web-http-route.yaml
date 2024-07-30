@@ -1,10 +1,11 @@
-apiVersion: gateway.networking.k8s.io/v1beta1
 kind: HTTPRoute
+apiVersion: gateway.networking.k8s.io/v1beta1
 metadata:
   name: miosys-http-route
 spec:
   parentRefs:
-  - name: miosys-prod-web
+  - kind: Gateway
+    name: miosys-prod-web
   hostnames:
   - "miosys.com.br"
   rules:
