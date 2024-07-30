@@ -9,7 +9,7 @@ spec:
   rules:
   - matches:
     - path:
-        value: /de
+        value: /
     backendRefs:
     - name: miosys-rest-api-stock-counter-service
       port: 8080
