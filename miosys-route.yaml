@@ -21,4 +21,4 @@ spec:
           replacePrefixMatch: /
     backendRefs:
     - name: miosys-rest-api-stock-counter-service
-      port: 80
+      port: 8080
