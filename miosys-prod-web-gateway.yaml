@@ -1,16 +1,12 @@
 kind: Gateway
 apiVersion: gateway.networking.k8s.io/v1beta1
 metadata:
-  name: miosys-prod-web
+  name: miosys-gateway
+  annotations:
+    networking.gke.io/certmap: miosys-com-br-map
 spec:
   gatewayClassName: gke-l7-regional-external-managed
   listeners:
-  - name: http
-    protocol: http
-    port: 80
-    allowedRoutes:
-      namespaces:
-        from: Same
-  addresses:
-  - type: NamedAddress
-    value: miosys-external-ip
+  - name: https
+    protocol: HTTPS
+    port: 443
