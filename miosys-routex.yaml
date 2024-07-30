@@ -6,9 +6,10 @@ spec:
   parentRefs:
   - kind: Gateway
     name: miosys-gateway
-  #hostnames:
-  #- "miosys.com.br"
   rules:
-  - backendRefs:
+  - matches:
+    - path:
+        value: /de
+    backendRefs:
     - name: miosys-rest-api-stock-counter-service
       port: 8080
