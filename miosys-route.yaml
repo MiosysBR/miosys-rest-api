@@ -20,10 +20,17 @@ spec:
     backendRefs:
     - name: miosys-rest-api-stock-counter-service
       port: 8080
+  # Default
   - matches:     
     - path:
         type: PathPrefix
-        value: /abacate
+        value: /api
+    filters:
+    - type: URLRewrite
+      urlRewrite:
+        path:
+          type: ReplacePrefixMatch
+          replacePrefixMatch: /
     backendRefs:
-    - name: hello-server
+    - name: miosys-rest-api-default-service
       port: 8080
