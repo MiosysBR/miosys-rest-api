@@ -4,7 +4,10 @@ metadata:
   name: miosys-route
 spec:
   parentRefs:
-  - name: miosys-gateway
+    - kind: Gateway
+      name: miosys-gateway
+  hostnames:
+  - api.miosys.com.br
   rules:
   # StockCounter
   - matches:     
