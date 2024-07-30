@@ -28,6 +28,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: miosys-rest-api-stock-counter-service
+  annotations:
+    cloud.google.com/neg: '{"exposed_ports": {"8080":{}}}'
 spec:
   selector:
     app: miosys-rest-api-stock-counter-microservice
@@ -35,3 +37,4 @@ spec:
   - protocol: TCP
     port: 8080
     targetPort: 8080
+  type: ClusterIP
