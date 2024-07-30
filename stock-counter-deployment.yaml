@@ -18,6 +18,18 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /v1
+            port: 8080
+          initialDelaySeconds: 3
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /v1
+            port: 8080
+          initialDelaySeconds: 3
+          periodSeconds: 10
         env:
         - name: SERVER_PORT
           value: "8080"
