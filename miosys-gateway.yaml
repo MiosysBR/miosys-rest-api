@@ -24,7 +24,7 @@ spec:
       certificateRefs:
       - kind: Secret
         group: ""
-        name: secret-tls
+        name: web-ssl
     allowedRoutes:
       namespaces:
         from: All
