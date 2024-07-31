@@ -3,8 +3,7 @@ kind: Gateway
 metadata:
   name: miosys-gateway
   annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-production
-    kubernetes.io/tls-acme: "true"
+    cert-manager.io/issuer: letsencrypt-production
 spec:
   gatewayClassName: gke-l7-regional-external-managed
   listeners:
