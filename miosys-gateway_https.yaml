@@ -23,7 +23,7 @@ spec:
       mode: Terminate
       certificateRefs:
       - kind: Secret
-        name: web-ssl
+        name: secret-tls
     allowedRoutes:
       namespaces:
         from: All
