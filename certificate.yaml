@@ -11,4 +11,3 @@ spec:
   commonName: miosys.com.br
   dnsNames:
   - miosys.com.br
-  - www.miosys.com.br
