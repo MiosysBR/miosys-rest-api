@@ -16,4 +16,6 @@ kubectl apply -f https://raw.githubusercontent.com/MiosysBR/miosys-rest-api/main
 kubectl apply -f https://raw.githubusercontent.com/MiosysBR/miosys-rest-api/main/issuer-lets-encrypt-staging.yaml
 kubectl apply -f https://raw.githubusercontent.com/MiosysBR/miosys-rest-api/main/miosys-gateway-https.yaml
 kubectl apply -f https://raw.githubusercontent.com/MiosysBR/miosys-rest-api/main/certificate.yaml
+kubectl apply -f https://raw.githubusercontent.com/MiosysBR/miosys-rest-api/main/issuer-lets-encrypt-production.yaml
+kubectl apply -f https://raw.githubusercontent.com/MiosysBR/miosys-rest-api/main/certificate.yaml
 ```

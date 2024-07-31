@@ -5,7 +5,7 @@ metadata:
 spec:
   secretName: miosys-ssl
   issuerRef:
-    name: letsencrypt-staging
+    name: letsencrypt-production
     kind: ClusterIssuer
     group: cert-manager.io
   commonName: miosys.com.br
