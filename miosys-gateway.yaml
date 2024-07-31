@@ -3,13 +3,13 @@ kind: Gateway
 metadata:
   name: miosys-gateway
   annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-prod
+    cert-manager.io/issuer: letsencrypt-production
     kubernetes.io/tls-acme: "true"
 spec:
   gatewayClassName: gke-l7-regional-external-managed
   listeners:
   - name: miosys-gateway-web
-    hostname: "*.com.br"
+    hostname: miosys.com.br
     port: 80 
     protocol: HTTP
     allowedRoutes:
