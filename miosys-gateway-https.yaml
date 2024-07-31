@@ -7,8 +7,8 @@ metadata:
 spec:
   gatewayClassName: gke-l7-regional-external-managed
   listeners:
-  - name: miosys-gateway-web
-    hostname: "*.miosys.com.br"
+  - name: http
+    hostname: "*.com.br"
     port: 80 
     protocol: HTTP
     allowedRoutes:
