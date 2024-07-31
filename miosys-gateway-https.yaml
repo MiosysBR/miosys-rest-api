@@ -16,7 +16,7 @@ spec:
       namespaces:
          from: All
   - name: https
-    hostname: miosys.com.br
+    hostname: miosys.com.br  # Required
     protocol: HTTPS
     port: 443
     tls:
