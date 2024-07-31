@@ -9,5 +9,9 @@ kubectl apply -f https://raw.githubusercontent.com/MiosysBR/miosys-rest-api/main
 ```
 
 ```
-kubectl apply -f https://raw.githubusercontent.com/MiosysBR/miosys-rest-api/main/issuer.yaml
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout miosys-com-br-tls.key -out miosys-com-br-tls.crt -subj "/CN=miosys.com.br"
+kubectl create secret tls miosys-com-br-tls --key="miosys-com-br-tls.key" --cert="miosys-com-br-tls.crt"
+kubectl apply -f https://raw.githubusercontent.com/MiosysBR/miosys-rest-api/main/miosys-gateway-http.yaml
+kubectl apply -f https://raw.githubusercontent.com/MiosysBR/miosys-rest-api/main/issuer-lets-encrypt-staging.yaml
+kubectl apply -f https://raw.githubusercontent.com/MiosysBR/miosys-rest-api/main/certificate.yaml
 ```

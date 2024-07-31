@@ -6,7 +6,7 @@ spec:
   secretName: miosys-ssl
   issuerRef:
     name: letsencrypt-staging
-    kind: Issuer
+    kind: ClusterIssuer
     group: cert-manager.io
   commonName: miosys.com.br
   dnsNames:
