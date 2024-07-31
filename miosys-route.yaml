@@ -7,7 +7,7 @@ spec:
     - kind: Gateway
       name: miosys-gateway
   hostnames:
-  - "miosys.com.br"
+  - "*.com.br"
   rules:
   - matches:
     - path:
