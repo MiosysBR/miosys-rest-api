@@ -4,6 +4,7 @@ metadata:
   name: miosys-tls
   namespace: default
 spec:
+  secretName: secret-tls
   issuerRef:
     name: letsencrypt-production
   dnsNames:
