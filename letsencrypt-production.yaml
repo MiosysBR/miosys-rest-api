@@ -5,6 +5,10 @@ metadata:
   namespace: default
 spec:
   acme:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: 'alaajamal470@gmail.com'
+    privateKeySecretRef:
+      name: letsencrypt-production
     solvers:
     - http01:
         gatewayHTTPRoute:
