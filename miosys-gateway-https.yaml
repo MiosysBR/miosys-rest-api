@@ -11,7 +11,7 @@ spec:
       value: miosys-api-ip
   listeners:
   - name: http
-    hostname: miosys.com.br
+    hostname: "*.com.br"
     port: 80 
     protocol: HTTP
     allowedRoutes:
@@ -24,7 +24,7 @@ spec:
     tls:
       mode: Terminate # Required. "Terminate" is the only supported mode.
       certificateRefs:
-      - name: miosys-com-br-tls # Required
+      - name: miosys-ssl # Required
         kind: Secret # Required. "Secret" is the only valid value.
         group: ""
     allowedRoutes:

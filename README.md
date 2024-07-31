@@ -9,5 +9,5 @@ kubectl apply -f https://raw.githubusercontent.com/MiosysBR/miosys-rest-api/main
 ```
 
 ```
-kubectl apply -f https://raw.githubusercontent.com/MiosysBR/miosys-rest-api/main/stock-counter-deployment.yaml
+kubectl apply -f https://raw.githubusercontent.com/MiosysBR/miosys-rest-api/main/issuer.yaml
 ```
