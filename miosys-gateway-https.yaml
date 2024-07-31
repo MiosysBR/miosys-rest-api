@@ -22,9 +22,8 @@ spec:
     tls:
       mode: Terminate
       certificateRefs:
-      - kind: Secret
-        name: secret-tls
-        group: ""
+      - kind: Certificate
+        name: miosys-com-br-tls
     allowedRoutes:
       namespaces:
         from: All
