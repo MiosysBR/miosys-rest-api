@@ -3,7 +3,7 @@ kind: Gateway
 metadata:
   name: miosys-gateway
   annotations:
-    cert-manager.io/issuer: letsencrypt-production
+    cert-manager.io/cluster-issuer: letsencrypt-production
     kubernetes.io/tls-acme: "true"
 spec:
   gatewayClassName: gke-l7-regional-external-managed
@@ -14,7 +14,7 @@ spec:
     protocol: HTTP
     allowedRoutes:
       namespaces:
-         from: All 
+         from: All
   - name: https
     hostname: miosys.com.br
     protocol: HTTPS
@@ -24,6 +24,7 @@ spec:
       certificateRefs:
       - kind: Secret
         name: secret-tls
+        group: ""
     allowedRoutes:
       namespaces:
         from: All
