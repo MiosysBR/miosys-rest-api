@@ -24,7 +24,7 @@ spec:
     tls:
       mode: Terminate # Required. "Terminate" is the only supported mode.
       certificateRefs:
-      - name: miosys-com-br-tls # Required
+      - name: web-ssl # Required
         kind: Secret # Required. "Secret" is the only valid value.
         group: ""
     allowedRoutes:
