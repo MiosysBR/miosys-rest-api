@@ -23,7 +23,6 @@ spec:
       mode: Terminate
       certificateRefs:
       - kind: Secret
-        group: ""
         name: web-ssl
     allowedRoutes:
       namespaces:
