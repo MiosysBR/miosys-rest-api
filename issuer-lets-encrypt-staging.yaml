@@ -1,4 +1,3 @@
-# issuer-lets-encrypt-staging.yaml
 apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
@@ -14,5 +13,4 @@ spec:
         gatewayHTTPRoute:
           parentRefs:
           - name: miosys-gateway
-            kind: Gateway
-            namespace: default
+
