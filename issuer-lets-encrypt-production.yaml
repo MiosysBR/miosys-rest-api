@@ -1,6 +1,5 @@
-# issuer-lets-encrypt-production.yaml
 apiVersion: cert-manager.io/v1
-kind: Issuer
+kind: ClusterIssuer
 metadata:
   name: letsencrypt-production
 spec:
@@ -14,3 +13,5 @@ spec:
         gatewayHTTPRoute:
           parentRefs:
           - name: miosys-gateway
+            kind: Gateway
+            namespace: default

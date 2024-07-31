@@ -13,4 +13,5 @@ spec:
         gatewayHTTPRoute:
           parentRefs:
           - name: miosys-gateway
-
+            kind: Gateway
+            namespace: default
