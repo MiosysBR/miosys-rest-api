@@ -8,8 +8,18 @@ spec:
       name: miosys-gateway
       sectionName: https
   hostnames:
-  - panel.miosys.com.br
+  - "panel.miosys.com.br"
   rules:
-  - backendRefs:
+  - matches:     
+    - path:
+        type: PathPrefix
+        value: /
+    filters:
+    - type: URLRewrite
+      urlRewrite:
+        path:
+          type: ReplacePrefixMatch
+          replacePrefixMatch: /
+    backendRefs:
     - name: nginx-service
       port: 8080
