@@ -23,6 +23,8 @@ kubectl apply -f https://raw.githubusercontent.com/MiosysBR/miosys-rest-api/main
 kubectl apply -f https://raw.githubusercontent.com/MiosysBR/miosys-rest-api/main/issuer-letsencrypt-production-dns-01.yaml
 kubectl apply -f https://raw.githubusercontent.com/MiosysBR/miosys-rest-api/main/certificate-wildcard.yaml
 
+kubectl apply -f https://raw.githubusercontent.com/MiosysBR/miosys-rest-api/main/miosys-route-force-https.yaml
+
 ```
 
 kubectl create secret generic clouddns-dns01-solver-svc-acct \
