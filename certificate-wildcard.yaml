@@ -10,4 +10,5 @@ spec:
     group: cert-manager.io
   commonName: "*.miosys.com.br"
   dnsNames:
+  - "miosys.com.br"
   - "*.miosys.com.br"
