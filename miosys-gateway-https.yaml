@@ -10,6 +10,19 @@ spec:
     - type: NamedAddress
       value: miosys-api-ip
   listeners:
+  - name: https-root
+    hostname: "miosys.com.br"  # Required
+    protocol: HTTPS
+    port: 443
+    tls:
+      mode: Terminate # Required. "Terminate" is the only supported mode.
+      certificateRefs:
+      - name: miosys-wildcard-ssl # Required
+        kind: Secret # Required. "Secret" is the only valid value.
+        group: ""
+    allowedRoutes:
+      namespaces:
+        from: All
   - name: https
     hostname: "*.miosys.com.br"  # Required
     protocol: HTTPS
