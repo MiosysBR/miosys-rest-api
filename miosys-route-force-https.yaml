@@ -1,0 +1,57 @@
+# force main domain https
+# redirect http://example.com -> https://example.com
+apiVersion: gateway.networking.k8s.io/v1beta1
+kind: HTTPRoute
+metadata:
+  name: miosys-filter-redirect-domain-route
+spec:
+  parentRefs:
+    - kind: Gateway
+      name: miosys-gateway
+      sectionName: http
+  hostnames:
+  - miosys.com.br
+  rules:
+  - filters:
+    - type: RequestRedirect
+      requestRedirect:
+        scheme: https
+        statusCode: 301
+---
+# rewrite https://example.com -> https://www.example.com
+apiVersion: gateway.networking.k8s.io/v1beta1
+kind: HTTPRoute
+metadata:
+  name: miosys-filter-redirect-domain-route
+spec:
+  parentRefs:
+    - kind: Gateway
+      name: miosys-gateway
+      sectionName: https
+  hostnames:
+  - miosys.com.br
+  rules:
+  - filters:
+    - type: URLRewrite
+      urlRewrite:
+        hostname: www.miosys.com.br
+---
+
+# Force all subdomains to https
+apiVersion: gateway.networking.k8s.io/v1beta1
+kind: HTTPRoute
+metadata:
+  name: miosys-filter-redirect-subdomain-route
+spec:
+  parentRefs:
+    - kind: Gateway
+      name: miosys-gateway
+      sectionName: http
+  hostnames:
+  - "*.miosys.com.br"
+  rules:
+  - filters:
+    - type: RequestRedirect
+      requestRedirect:
+        scheme: https
+        statusCode: 301
