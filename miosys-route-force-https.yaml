@@ -9,7 +9,7 @@ spec:
       name: miosys-gateway
       sectionName: http
   hostnames:
-  - "miosys.com.br"
+  - miosys.com.br
   - "*.miosys.com.br"
   rules:
   - filters:
@@ -29,11 +29,11 @@ spec:
       name: miosys-gateway
       sectionName: https-root
   hostnames:
-  - "miosys.com.br"
+  - miosys.com.br
   rules:
   - filters:
     - type: RequestRedirect
       requestRedirect:
         scheme: https
-        hostname: "www.miosys.com.br"
+        hostname: www.miosys.com.br
         statusCode: 301
