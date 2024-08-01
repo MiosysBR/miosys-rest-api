@@ -6,6 +6,7 @@ spec:
   parentRefs:
     - kind: Gateway
       name: miosys-gateway
+      sectionName: https
   hostnames:
   - miosys.com.br
   rules:
