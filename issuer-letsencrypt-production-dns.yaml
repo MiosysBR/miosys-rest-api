@@ -10,7 +10,7 @@ spec:
       name: letsencrypt-production-dns-private-key
     solvers:
     - dns01:
-       clouddns:
+       cloudDNS:
          project: miosys
          serviceAccountSecretRef:
            name: clouddns-dns01-solver-svc-acct
