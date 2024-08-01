@@ -10,10 +10,6 @@ spec:
   hostnames:
   - panel.miosys.com.br
   rules:
-  - matches:
-    - path:
-        value: /
-        type: Exact
-    backendRefs:
+  - backendRefs:
     - name: nginx-service
       port: 8080
