@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: miosys-com-br-wildcard-certificate
+spec:
+  secretName: miosys-wildcard-ssl
+  issuerRef:
+    name: letsencrypt-production-dns
+    kind: ClusterIssuer
+    group: cert-manager.io
+  commonName: "*.miosys.com.br"
+  dnsNames:
+  - miosys.com.br
+  - www.miosys.com.br
