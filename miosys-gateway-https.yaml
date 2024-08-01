@@ -11,8 +11,15 @@ spec:
       value: miosys-api-ip
   listeners:
   - name: http
+    hostname: miosys.com.br
     protocol: HTTP
     port: 80
+
+  - name: http
+    hostname: "*.miosys.com.br"
+    protocol: HTTP
+    port: 80
+
   - name: https-root
     hostname: "miosys.com.br"  # Required
     protocol: HTTPS
@@ -26,6 +33,7 @@ spec:
     allowedRoutes:
       namespaces:
         from: All
+        
   - name: https
     hostname: "*.miosys.com.br"  # Required
     protocol: HTTPS

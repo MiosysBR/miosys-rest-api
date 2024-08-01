@@ -8,7 +8,7 @@ spec:
       name: miosys-gateway
       sectionName: https
   hostnames:
-  - "wwww.miosys.com.br"
+  - panel.miosys.com.br
   rules:
   - matches:
     - path:
