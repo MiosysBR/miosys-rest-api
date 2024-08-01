@@ -10,7 +10,7 @@ spec:
     - type: NamedAddress
       value: miosys-api-ip
   listeners:
-  - name: http
+  - name: http-root
     hostname: miosys.com.br
     protocol: HTTP
     port: 80
@@ -33,7 +33,7 @@ spec:
     allowedRoutes:
       namespaces:
         from: All
-        
+
   - name: https
     hostname: "*.miosys.com.br"  # Required
     protocol: HTTPS
