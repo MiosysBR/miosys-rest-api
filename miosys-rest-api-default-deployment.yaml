@@ -31,9 +31,6 @@ spec:
 
         - name: SERVER_PORT
           value: "8080"
-
-        - name: JDBC_URL
-          value: "jdbc:postgresql://localhost:5432/miosys"
         
       - name: cloud-sql-proxy
         # It is recommended to use the latest version of the Cloud SQL Auth Proxy
