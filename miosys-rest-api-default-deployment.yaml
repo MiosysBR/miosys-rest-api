@@ -59,7 +59,7 @@ spec:
         # other pods. You should adjust the following values based on what your
         resources:
           requests:
-            memory: "2Gi"
+            memory: "1Gi"
             cpu:    "1"  
 ---
 apiVersion: v1
