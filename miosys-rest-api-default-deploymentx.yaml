@@ -27,7 +27,7 @@ spec:
         - containerPort: 8080
         env:
         - name: SPRING_PROFILES_ACTIVE
-          value: "default"
+          value: "prod"
 
         - name: SERVER_PORT
           value: "8080"
